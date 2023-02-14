@@ -71,7 +71,12 @@
 
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `pridapablo`, `Tareas_TC2008B`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+This is a repo with all the assignments for the TC2008B course at Tecnológico de Monterrey. The assignments are divided into 3 folders:
+
+1. DB - Contains all the assignments related to the database (MySQL)
+2. Videogames - Contains all the assignments related to the videogames (UNITY)
+3. WebDev - Contains all the assignments related to the web development (written in HTML, CSS and JS)
+4. SoftwareEngineering - Contains all the assignments related to software engineering (such as UML diagrams)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -82,6 +87,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 To run this project locally, follow these simple steps:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -108,7 +115,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/pridapablo) - pridapablo@gmail.com
+Your Name - [@pridapablo](https://twitter.com/pridapablo) - pridapablo@gmail.com
 
 Project Link: [https://github.com/pridapablo/Tareas_TC2008B](https://github.com/pridapablo/Tareas_TC2008B)
 
@@ -139,7 +146,7 @@ Project Link: [https://github.com/pridapablo/Tareas_TC2008B](https://github.com/
 [license-shield]: https://img.shields.io/github/license/pridapablo/Tareas_TC2008B.svg?style=for-the-badge
 [license-url]: https://github.com/pridapablo/Tareas_TC2008B/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/pridapablo
 [product-screenshot]: images/screenshot.png
 [next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [next-url]: https://nextjs.org/
