@@ -18,7 +18,12 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[LinkedIn][https://www.linkedin.com/in/pridapablo/]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 
@@ -47,19 +52,10 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -115,7 +111,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@pridapablo](https://twitter.com/pridapablo) - pridapablo@gmail.com
+Pablo Banzo Prida - [@pridapablo](https://twitter.com/pridapablo) - pridapablo@gmail.com
 
 Project Link: [https://github.com/pridapablo/Tareas_TC2008B](https://github.com/pridapablo/Tareas_TC2008B)
 
