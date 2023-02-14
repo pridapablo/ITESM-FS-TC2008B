@@ -140,7 +140,7 @@ Project Link: [https://github.com/pridapablo/A01782031_TC2008B](https://github.c
 [issues-shield]: https://img.shields.io/github/issues/pridapablo/A01782031_TC2008B.svg?style=for-the-badge
 [issues-url]: https://github.com/pridapablo/A01782031_TC2008B/issues
 [license-shield]: https://img.shields.io/github/license/pridapablo/A01782031_TC2008B.svg?style=for-the-badge
-[license-url]: https://github.com/pridapablo/A01782031_TC2008B/blob/master/LICENSE.txt
+[license-url]: https://github.com/pridapablo/A01782031_TC2008B/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/pridapablo
 [product-screenshot]: images/screenshot.png
