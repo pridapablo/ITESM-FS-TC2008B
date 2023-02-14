@@ -29,7 +29,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/pridapablo/Tareas_TC2008B">
+  <a href="https://github.com/pridapablo/A01782031_TC2008B">
     <img src="images/Logo_TEC.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -38,7 +38,7 @@
 <p align="center">
     Repo with all TC2008B assignments
     <br />
-    <a href="https://github.com/pridapablo/Tareas_TC2008B"><strong>Explore the repo »</strong></a>
+    <a href="https://github.com/pridapablo/A01782031_TC2008B"><strong>Explore the repo »</strong></a>
     <br />
     <br />
 
@@ -113,7 +113,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Pablo Banzo Prida - [@pridapablo](https://twitter.com/pridapablo) - pridapablo@gmail.com
 
-Project Link: [https://github.com/pridapablo/Tareas_TC2008B](https://github.com/pridapablo/Tareas_TC2008B)
+Project Link: [https://github.com/pridapablo/A01782031_TC2008B](https://github.com/pridapablo/A01782031_TC2008B)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -131,16 +131,16 @@ Project Link: [https://github.com/pridapablo/Tareas_TC2008B](https://github.com/
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/pridapablo/Tareas_TC2008B.svg?style=for-the-badge
-[contributors-url]: https://github.com/pridapablo/Tareas_TC2008B/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/pridapablo/Tareas_TC2008B.svg?style=for-the-badge
-[forks-url]: https://github.com/pridapablo/Tareas_TC2008B/network/members
-[stars-shield]: https://img.shields.io/github/stars/pridapablo/Tareas_TC2008B.svg?style=for-the-badge
-[stars-url]: https://github.com/pridapablo/Tareas_TC2008B/stargazers
-[issues-shield]: https://img.shields.io/github/issues/pridapablo/Tareas_TC2008B.svg?style=for-the-badge
-[issues-url]: https://github.com/pridapablo/Tareas_TC2008B/issues
-[license-shield]: https://img.shields.io/github/license/pridapablo/Tareas_TC2008B.svg?style=for-the-badge
-[license-url]: https://github.com/pridapablo/Tareas_TC2008B/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/pridapablo/A01782031_TC2008B.svg?style=for-the-badge
+[contributors-url]: https://github.com/pridapablo/A01782031_TC2008B/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/pridapablo/A01782031_TC2008B.svg?style=for-the-badge
+[forks-url]: https://github.com/pridapablo/A01782031_TC2008B/network/members
+[stars-shield]: https://img.shields.io/github/stars/pridapablo/A01782031_TC2008B.svg?style=for-the-badge
+[stars-url]: https://github.com/pridapablo/A01782031_TC2008B/stargazers
+[issues-shield]: https://img.shields.io/github/issues/pridapablo/A01782031_TC2008B.svg?style=for-the-badge
+[issues-url]: https://github.com/pridapablo/A01782031_TC2008B/issues
+[license-shield]: https://img.shields.io/github/license/pridapablo/A01782031_TC2008B.svg?style=for-the-badge
+[license-url]: https://github.com/pridapablo/A01782031_TC2008B/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/pridapablo
 [product-screenshot]: images/screenshot.png
