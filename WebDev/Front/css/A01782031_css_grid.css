@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box; /*all elements will have the same box model. There won't be overflow and all boxes will have the size of their parent*/
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid; /*grid container as a grid (cols rows)*/
+  /* grid-template-columns: 100px 200px 100px; 3 columns */
+  /* If all columns are even then i can use the repeat() function */
+  height: 100vh; /*100% viewport height*/
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /*fr is a flexible unit (makes things responsive)*/
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "header header header" /*header is the name of the area, and it should be on columns≤ one, two and three*/
+    ". content ."
+    ". content ."
+    ". content ."
+    "footer footer footer"; /*. is a wildcard*/
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(220, 149, 220);
+}
+
+.grid-item {
+  padding: 10px;
+  /* margin: 10px; */ /*it can be replaced with a gap inside the grid*/
+  background-color: #62c8f0;
+}
+
+.grid-item:nth-child(even) {
+  /*even instances in the container*/
+  background-color: #abddea;
+}
+
+#grid-header {
+  grid-area: header;
+  /* grid-column: 1 / -1; */ /*from column 1 to the last one*/
+}
+
+#grid-content {
+  grid-area: content;
+  /* grid-row: 2 / span 4; */
+  /* grid-column: 2;  */
+}
+
+#grid-footer {
+  /* grid-column: 1 / span 3; */
+  grid-area: footer;
+}
