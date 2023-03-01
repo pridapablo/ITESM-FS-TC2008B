@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box; /*all elements will have the same box model. There won't be overflow and all boxes will have the size of their parent*/
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "double double double1 double1"
+    "triple triple triple1 triple1"
+    "triple triple triple1 triple1";
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(220, 149, 220);
+}
+
+.grid-item {
+  padding: 10px;
+  background-color: #62c8f0;
+}
+
+#grid-double {
+  grid-area: double;
+}
+
+#grid-double1 {
+  grid-area: double1;
+}
+
+#grid-triple {
+  grid-area: triple;
+}
+
+#grid-triple1 {
+  grid-area: triple1;
+}
+
+.grid-container1 {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "title title"
+    ". .";
+  gap: 10px;
+
+}
+
+#grid1-h {
+  grid-area: title;
+}
+
+.colorize{
+  background-color: #a5d1e3;
+}
+
+.grid-item:nth-child(1) {
+  background-color: #f0c862;
+}
+
+.grid-item:nth-child(2) {
+  background-color: #62f0c8;
+}
+
+.grid-item:nth-child(3) {
+  background-color: #ffd4f3;
+}
+
+.grid-item:nth-child(4) {
+  background-color: #8682f4;
+}

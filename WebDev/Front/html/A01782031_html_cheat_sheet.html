@@ -7,7 +7,7 @@
     <title>HTML Cheat Sheet</title>
   </head>
   <body>
-     <h1>CheetSheet</h1>
+     <h1>HTML Cheat Sheet</h1>
     <div style="color: blueviolet;">
    
     
@@ -111,21 +111,21 @@
     <p>The &lt;aside&gt; HTML element represents a portion of a document whose content is only indirectly related to the document's main content. Asides are frequently presented as sidebars or call-out boxes.
     </p>
     <aside>
-      <p>I'm a p inside of an aside</p>
+      <p>I'm a p inside of an aside, i should be on the side of the page</p>
     </aside>
     <!-- footer -->
     <h1>footer - Footer</h1>
     <p>The &lt;footer&gt; HTML element represents a footer for its nearest ancestor sectioning content or sectioning root element. A <footer> typically contains information about the author of the section, copyright data or links to related documents.
     </p>
     <footer>
-      <p>I'm a p inside of a footer</p>
+      <p>I'm a p inside of a footer, and i should be on the bottom of the page</p>
     </footer>
     <!-- nav -->
     <h1>nav - Navigation</h1>
     <p>The &lt;nav&gt; HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
     </p>
     <nav>
-      <p>I'm a p inside of a nav</p>
+      <p>I'm a p inside of a nav, and i should be at the top of the page</p>
     </nav>
     <!-- img -->
     <h1>img - Image</h1>
@@ -150,9 +150,19 @@
     <!-- form -->
     <h1>form - Form</h1>
     <p>The &lt;form&gt; HTML element represents a document section containing interactive controls for submitting information.</p>
-    <form>
-      <p>I'm a p inside of a form</p>
-    </form>
+    <form action="" method="get" class="form-example">
+  <div class="form-example">
+    <label for="name">Enter your name: </label>
+    <input type="text" name="name" id="name" required>
+  </div>
+  <div class="form-example">
+    <label for="email">Enter your email: </label>
+    <input type="email" name="email" id="email" required>
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Subscribe!">
+  </div>
+</form>
     <!-- table -->
     <h1>table - Table</h1>
     <p>The &lt;table&gt; HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
@@ -196,5 +206,7 @@
     <h1>References</h1>
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Web Docs</a>
     </div>
+    <!-- Add a button to go back to index.html -->
+    <a href="/index.html">Back to Home</a>
   </body>
 </html>

@@ -94,3 +94,20 @@
 #filter {
   filter: blur(2px);
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(220, 149, 220);
+}
+
+.grid-item {
+  padding: 10px;
+}
+
+.grid-item:nth-child(odd) {
+  background-color: rgb(255, 255, 255);
+}
