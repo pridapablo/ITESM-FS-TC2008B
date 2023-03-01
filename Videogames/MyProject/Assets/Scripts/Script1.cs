@@ -1,3 +1,10 @@
+/*
+Drop balls from the top of the screen at random positions
+
+Pablo Banzo Prida
+2023-03-01
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
