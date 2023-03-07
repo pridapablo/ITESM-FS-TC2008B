@@ -119,4 +119,4 @@ Basta con aplicar la división entre ambas relaciones para obtener el resultado 
 $$R5 ÷ \Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$$
 
 Nota: el procedimiento de la división fue extraido de la  libro sugerido en la clase (http://www.cherrycreekeducation.com/bbk/b/Pearson_Database_Systems_A_Practical_Approach_to_Design_Implementation_and_Management_6th_Global_Edition_1292061189.pdf).
-"The Division operation defines a relation over the attributes C that consists of the set of tuples from r that match the combination of every tuple in S." (Página 177)
+"The Division operation defines a relation over the attributes C that consists of the set of tuples from R that match the combination of every tuple in S." (Página 177)
