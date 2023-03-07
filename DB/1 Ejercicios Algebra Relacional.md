@@ -15,7 +15,7 @@ Se dispone de una Base de Datos RELACIONAL para un torneo internacional compuest
 
 COMPETENCIA (NombreCompetencia: STRING, NumPtos: INTEGER, Tipo: STRING)
 
-      Una competencia de un cierto TIPO, se identifica por su nombre NOMBRECOMPETENCIA y aporta un cierto número de puntos NUMPTOS.
+Una competencia de un cierto TIPO, se identifica por su nombre NOMBRECOMPETENCIA y aporta un cierto número de puntos NUMPTOS.
 
 ## TABLA PARTICIPANTE
 
@@ -26,7 +26,7 @@ COMPETENCIA (NombreCompetencia: STRING, NumPtos: INTEGER, Tipo: STRING)
 PARTICIPANTE ( Número: INTEGER,
 Apellidos: STRING, Nombre: STRING, Nacionalidad: STRING)
 
-      Una persona que participa en el torneo es identificada por un número de participante NUMERO y se registra con sus APELLIDOS, su NOMBRE y su NACIONALIDAD.
+Una persona que participa en el torneo es identificada por un número de participante NUMERO y se registra con sus APELLIDOS, su NOMBRE y su NACIONALIDAD.
 
 ## TABLA PUNTOS ACUMULADOS
 
@@ -36,7 +36,7 @@ Apellidos: STRING, Nombre: STRING, Nacionalidad: STRING)
 
 PUNTOSACUMULADOS(Número: INTEGER, Puntos: INTEGER )
 
-      Todo participante identificado por NUMERO acumula un número de puntos PUNTOS durante el torneo.
+Todo participante identificado por NUMERO acumula un número de puntos PUNTOS durante el torneo.
 
 ## TABLA CLASIFICACION
 
@@ -51,15 +51,15 @@ Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes con
 
 ## Modelo algebráico:
 
-        - Proyección: π
-        - Selección: σ
-        - Concatenación: ⋈
-        - Unión: ∪
-        - Intersección: ∩
-        - Diferencia: -
-        - Producto cartesiano: ×
-        - Renombramiento: ρ
-        - División: ÷
+   - Proyeccion: $\Pi$
+   - Seleccion: $\sigma$
+   - Concatenacion: $\bowtie$
+   - Union: $\cup$
+   - Interseccion: $\cap$
+   - Diferencia: -
+   - Producto cartesiano: $\times$
+   - Renombramiento: $\rho$
+   - Division: ÷
 
 1. Apellidos y nombre de los participantes de nacionalidad mexicana.
    $$\Pi_{\text{Nombre,Apellidos}} (\sigma_{\text{Nacionalidad}=\text{"Mexicana"}} (\text{PARTICIPANTE}))$$
@@ -74,7 +74,7 @@ Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes con
    $$\Pi_{\text{Nombre,Apellidos}} (\text{PARTICIPANTE} - Q)$$
 6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.
    $$ \Pi_{\text{Nombre,Apellidos}}(\text{PARTICIPANTE} \bowtie \text{CLASIFICACION} )$$
-   Nota: esto es considerando que un participante clasificado necesariamente compitió, en caso de que esta premisa no sea cierta, se debe hacer una intersección con la tabla competencia.
+   Nota: esto es considerando que un participante clasificado necesariamente compitio, en caso de que esta premisa no sea cierta, se debe hacer una interseccion con la tabla competencia.
 
 7. Nombre de la competencia que aporta el máximo de puntos.
    $$ R1= \pi _{NumPtos}(COMPETENCIA)$$
@@ -88,7 +88,7 @@ $$ R8= \pi_{NumPtos}(R7)$$
 $$ R9= R1-R8$$
 $$ R10 = \rho _{res}(\Pi_{NombreCompetencia} (R9))$$
 
-Este procedimiento es para encontrar el máximo valor dentro de una relación, a partir de las diapositivas de la clase (Construcción de software y toma de decisiones 7-2-1).
+Este procedimiento es para encontrar el máximo valor dentro de una relacion, a partir de las diapositivas de la clase (Construccioon de software y toma de decisiones 7-2-1).
 
 8. Países (nacionalidades) que participaron en todas las competencias.
 
@@ -98,25 +98,38 @@ $$R2 = \Pi_{\text{NombreCompetencia,Número}}(\text{CLASIFICACION})$$
 $$R3 = R1 \bowtie R2$$
 
 R3 sería una tabla como esta:
+
 | NombreCompetencia | Número | Nacionalidad |
 | ----------------- | ------ | ------------ |
+| ...               | ...    | ...          |
 
 De dicha tabla, se obtiene una tabla con los paises con algún clasificado
 $$R4 = \Pi_{\text{NombreCompetencia,Nacionalidad}}(R3)$$
 Obteniendo R4 como:
+
 | NombreCompetencia | Nacionalidad |
 | ----------------- | ------------ |
+| ...               | ...          | 
 
-Posteriormente, se obtiene una tabla con los paises que compitieron (quitando a los países clasificados que no compitieron a traves de la concatenación):
+Posteriormente, se obtiene una tabla con los paises que compitieron (quitando a los países clasificados que no compitieron a traves de la concatenacion):
 $$R5 = R4 \bowtie \Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$$
 Tal que R5 es:
+
 | NombreCompetencia | Nacionalidad |
 | ----------------- | ------------ |
+| ...               | ...          |
 
 Ahora debemos manipular R5 para que nos quede una tabla con los paises que compitieron en TODAS las competencias. La tabla de competencias original $\Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$ contiene un listado de todas las competencias existentes.
 
-Basta con aplicar la división entre ambas relaciones para obtener el resultado deseado, dado que la división nos regresa una tupla con los elementos que están en la primera tabla y sus valores asociados con respecto a la segunda tabla:
-$$R5 ÷ \Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$$
+Basta con aplicar la division entre ambas relaciones para obtener el resultado deseado, dado que la division nos regresa una tupla con los elementos que están en la primera tabla y sus valores asociados con respecto a la segunda tabla:
+$$R5 \text{÷} \Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$$
 
-Nota: el procedimiento de la división fue extraido de la  libro sugerido en la clase (http://www.cherrycreekeducation.com/bbk/b/Pearson_Database_Systems_A_Practical_Approach_to_Design_Implementation_and_Management_6th_Global_Edition_1292061189.pdf).
+Para extraer las nacionalidades de la tabla resultante, se debe aplicar la proyeccion sobre la columna Nacionalidad:
+$$R6 = \Pi_{\text{Nacionalidad}}(R5 \text{÷} \Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA}))$$
+
+Por completitud, se renombra el resultado a "res" y se obtiene la tabla final:
+
+$$ R7 = \rho _{res}(\Pi_{NombreCompetencia} (R6))$$
+
+Nota: el procedimiento de la division fue extraido de la libro sugerido en la clase.
 "The Division operation defines a relation over the attributes C that consists of the set of tuples from R that match the combination of every tuple in S." (Página 177)
