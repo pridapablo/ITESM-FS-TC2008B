@@ -26,7 +26,7 @@ public class Script1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void DropBall()
@@ -36,6 +36,12 @@ public class Script1 : MonoBehaviour
         // Create a copy of the prefab at the new position
         GameObject obj = Instantiate(ball, pos, Quaternion.identity);
         // Destroy the object after 5 seconds
-        Destroy(obj, 5);
+        // Destroy(obj, 5);
+    }
+    public void StopBalls()
+    {
+        // Cancel the "DropBall" function
+        CancelInvoke("DropBall");
     }
 }
+
