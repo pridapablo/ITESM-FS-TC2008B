@@ -1,6 +1,7 @@
 # CONSTRUCCION DE SOFTWARE Y TOMA DE DESICIONES (TC2005B)
 
 ## ACTIVIDAD 1
+**Pablo Banzo Prida - A01782031**
 
 ### TORNEO INTERNACIONAL: Algebra relacional
 
@@ -48,7 +49,7 @@ Para la competencia de nombre NOMBRECOMPETENCIA, el participante identificado co
 
 Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes consultas:
 
-## Operadores:
+## Modelo algebráico:
 
         - Proyección: π
         - Selección: σ
@@ -58,6 +59,7 @@ Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes con
         - Diferencia: -
         - Producto cartesiano: ×
         - Renombramiento: ρ
+        - División: ÷
 
 1. Apellidos y nombre de los participantes de nacionalidad mexicana.
    $$\Pi_{\text{Nombre,Apellidos}} (\sigma_{\text{Nacionalidad}=\text{"Mexicana"}} (\text{PARTICIPANTE}))$$
@@ -68,13 +70,11 @@ Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes con
 4. Nombre de las competencias en las que intervinieron los participantes mexicanos.
    $$\Pi_{\text{NombreCompetencia}} (\sigma_{\text{Nacionalidad}=\text{"Mexicana"}} (\text{PARTICIPANTE} \bowtie \text{CLASIFICACION}\bowtie \text{COMPETENCIA}))$$
 5. Apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna competencia.
-   <!-- $$\Pi_{\text{Nombre,Apellidos}} (\sigma_{\text{Lugar} = 1} (\text{PARTICIPANTE} \bowtie \text{CLASIFICACION}))$$ -->
-   $$ \Pi*{\text{Nombre,Apellidos}}(\sigma*{\text{Lugar} = 1}\text{PARTICIPANTE}\bowtie \text{CLASIFICACION}) = Q$$
-   $$\Pi\_{\text{Nombre,Apellidos}} (\text{PARTICIPANTE} - Q)$$
+   $$ \Pi_{\text{Nombre,Apellidos}}(\sigma_{\text{Lugar} = 1}\text{PARTICIPANTE}\bowtie \text{CLASIFICACION}) = Q$$
+   $$\Pi_{\text{Nombre,Apellidos}} (\text{PARTICIPANTE} - Q)$$
 6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.
-   $$ \Pi\_{\text{Nombre,Apellidos}}(\text{PARTICIPANTE} \bowtie \text{CLASIFICACION} )$$
-
-   <!-- Decir por qué estoy haciendo las cosas así y agregar la visualización de las tablas -->
+   $$ \Pi_{\text{Nombre,Apellidos}}(\text{PARTICIPANTE} \bowtie \text{CLASIFICACION} )$$
+   Nota: esto es considerando que un participante clasificado necesariamente compitió, en caso de que esta premisa no sea cierta, se debe hacer una intersección con la tabla competencia.
 
 7. Nombre de la competencia que aporta el máximo de puntos.
    $$ R1= \pi _{NumPtos}(COMPETENCIA)$$
@@ -84,64 +84,39 @@ $$ R4= \rho _{tabla2}(R2)$$
 $$ R5= \rho _{NumPtos/NumPtos2}(R4)$$
 $$ R6= R3 \times R5$$
 $$ R7= \sigma _{NumPtos<NumPtos2}(R6)$$
-$$ R8= \pi _{NumPtos}(R7)$$
-$$ R9= R1-R2$$
-$$\Pi_{NombreCompetencia(COMPETENCIA \bowtie R9)}$$
+$$ R8= \pi_{NumPtos}(R7)$$
+$$ R9= R1-R8$$
+$$ R10 = \rho _{res}(\Pi_{NombreCompetencia} (R9))$$
 
-Otra opción:
-Realizar una proyección para seleccionar solamente el nombre de la competencia (NombreCompetencia) y el número de puntos (NumPtos) de la tabla COMPETENCIA:
-
-        π NombreCompetencia, NumPtos (COMPETENCIA)
-
-        Encontrar el número máximo de puntos (MaxNumPtos) utilizando selección y renombramiento:
-
-        ρ MaxNumPtos (σ NumPtos ≥ NumPtos (π NumPtos (COMPETENCIA)))
-
-        Aquí estamos comparando cada fila de la tabla proyectada con el valor máximo de puntos. La selección devuelve solo las filas que tienen un valor de puntos mayor o igual al valor máximo encontrado. Luego, renombramos el resultado de la selección como MaxNumPtos.
-
-        Unir la tabla proyectada con la tabla renombrada de MaxNumPtos utilizando concatenación:
-
-        π NombreCompetencia ((π NombreCompetencia, NumPtos (COMPETENCIA)) ⋈ MaxNumPtos)
-
-        Aquí estamos uniendo la tabla proyectada con la tabla renombrada de MaxNumPtos para obtener solamente las filas que tienen el número máximo de puntos. Luego, proyectamos solamente el nombre de la competencia para obtener la respuesta final.
-
-        Por último, para evitar filas duplicadas, podemos aplicar la operación de intersección con la misma tabla:
-
-        π NombreCompetencia ((π NombreCompetencia, NumPtos (COMPETENCIA)) ⋈ MaxNumPtos) ∩ π NombreCompetencia ((π NombreCompetencia, NumPtos (COMPETENCIA)) ⋈ MaxNumPtos)
-
-        Esta última operación nos devuelve solamente el nombre de la competencia que aporta el máximo de puntos.
-
-        $$π NombreCompetencia ((π NombreCompetencia, NumPtos (COMPETENCIA)) ⋈ ρ MaxNumPtos (σ NumPtos ≥ NumPtos (π NumPtos (COMPETENCIA)) )) ∩ π NombreCompetencia ((π NombreCompetencia, NumPtos (COMPETENCIA)) ⋈ ρ MaxNumPtos (σ NumPtos ≥ NumPtos (π NumPtos (COMPETENCIA)) ))
-        $$
+Este procedimiento es para encontrar el máximo valor dentro de una relación, a partir de las diapositivas de la clase (Construcción de software y toma de decisiones 7-2-1).
 
 8. Países (nacionalidades) que participaron en todas las competencias.
 
-$$R1 =\Pi{\text{Nacionalidad,Número}}(\text{PARTICIPANTE})$$
-$$R2 = \Pi{\text{NombreCompetencia,Número}}(\text{CLASIFICACION})$$
-$$R3 = \Pi{\text{NombreCompetencia}}(\text{COMPETENCIA})$$
+$$R1 =\Pi_{\text{Nacionalidad,Número}}(\text{PARTICIPANTE})$$
+$$R2 = \Pi_{\text{NombreCompetencia,Número}}(\text{CLASIFICACION})$$
 
-$$R4 = R1 \bowtie R2$$
+$$R3 = R1 \bowtie R2$$
+
+R3 sería una tabla como esta:
 | NombreCompetencia | Número | Nacionalidad |
 | ----------------- | ------ | ------------ |
 
-$$R6 = \Pi_{\text{NombreCompetencia,Nacionalidad}}(R5)$$
-De todos los clasificados
+De dicha tabla, se obtiene una tabla con los paises con algún clasificado
+$$R4 = \Pi_{\text{NombreCompetencia,Nacionalidad}}(R3)$$
+Obteniendo R4 como:
 | NombreCompetencia | Nacionalidad |
 | ----------------- | ------------ |
 
-$$R7 = R6 \bowtie R3$$
-De todos los paises que compitieron (quitando a los países clasificados que no compitieron)
+Posteriormente, se obtiene una tabla con los paises que compitieron (quitando a los países clasificados que no compitieron a traves de la concatenación):
+$$R5 = R4 \bowtie \Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$$
+Tal que R5 es:
 | NombreCompetencia | Nacionalidad |
 | ----------------- | ------------ |
 
-De alguna forma debemos manipular R7 para que nos quede una tabla con los paises que compitieron en todas las competencias. La tabla de competencias original (R3) contiene un listado de todas las competencias existentes y basta con ¿intersectar $\cap$? las columnas de R7 con R3 para obtener la respuesta.
+Ahora debemos manipular R5 para que nos quede una tabla con los paises que compitieron en TODAS las competencias. La tabla de competencias original $\Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$ contiene un listado de todas las competencias existentes.
 
-Es un sigma $\sigma$ para encontrar donde se cumple?
+Basta con aplicar la división entre ambas relaciones para obtener el resultado deseado, dado que la división nos regresa una tupla con los elementos que están en la primera tabla y sus valores asociados con respecto a la segunda tabla:
+$$R5 ÷ \Pi_{\text{NombreCompetencia}}(\text{COMPETENCIA})$$
 
-R8 = SELECT NombreCompetencia FROM R7 WHERE NACIONALIDAD='Mexicana'
-
-<!-- Con esto llego a una tabla donde tengo el listado de competencias en donde participó méxico... ¿cómo se si méxico participó en todas?
-Explicación de por qué lo hacemos así:
--->
-
-$$T = \Pi_{\text{Nacionalidad}}(R8) - π_{Nacionalidad}(σ_{NombreCompetencia NOT IN (R7)} (R8)$$
+Nota: el procedimiento de la división fue extraido de la  libro sugerido en la clase (http://www.cherrycreekeducation.com/bbk/b/Pearson_Database_Systems_A_Practical_Approach_to_Design_Implementation_and_Management_6th_Global_Edition_1292061189.pdf).
+"The Division operation defines a relation over the attributes C that consists of the set of tuples from r that match the combination of every tuple in S." (Página 177)
