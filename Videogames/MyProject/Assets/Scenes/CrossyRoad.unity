@@ -600,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 633990663}
+  maxScore: 10
   score: 0
 --- !u!1 &633990661
 GameObject:

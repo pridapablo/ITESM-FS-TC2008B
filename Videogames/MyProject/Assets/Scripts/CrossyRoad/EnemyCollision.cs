@@ -6,24 +6,29 @@ using UnityEngine.UI;
 public class EnemyCollision : MonoBehaviour
 {
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
+    [SerializeField] int maxScore;
     public int score = 0;
     // Origin Vector
     Vector3 origin = new Vector3(0, -6, 0);
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
+        if (score >= maxScore)
+        {
+            scoreText.text = "You Win!";
+            Time.timeScale = 0;
+        }
     }
 
-    // when the ball enters the hoop collider, trigger the "Score" function
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             Debug.Log("Collision with enemy");
             // Score Text to Game Over
-            scoreText.text = "Game Over";
             score = 0;
+            scoreText.text = "Score: " + score;
+
             // reset the player to the start
             gameObject.transform.position = origin;
         }
