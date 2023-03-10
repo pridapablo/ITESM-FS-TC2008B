@@ -2,6 +2,7 @@
 Move a GameObject vertically using the arrow keys or AD
 
 Pablo Banzo Prida
+Gabriel Rodríguez De Los Reyes
 2023-03-01
 */
 

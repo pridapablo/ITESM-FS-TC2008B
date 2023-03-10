@@ -5,6 +5,7 @@ It also updates (and keeps) the global player score using TextMeshPro.
 It was decided to keep the score in this script because in future implementations more than one player could be playing at the same time and scores would be different.
 
 Pablo Banzo Prida
+Gabriel Rodríguez De Los Reyes
 2023-03-08
 */
 using System.Collections;

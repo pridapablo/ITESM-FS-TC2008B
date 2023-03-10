@@ -2,6 +2,7 @@
 This script moves the object in a sine wave.
 
 Pablo Banzo Prida
+Gabriel Rodríguez De Los Reyes
 2023-03-08
 */
 using System.Collections;
