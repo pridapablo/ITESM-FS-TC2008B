@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 614149649}
   - component: {fileID: 614149650}
   m_Layer: 0
-  m_Name: Pana
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
