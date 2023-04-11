@@ -4,7 +4,7 @@
 
 // I'm using the fetch API
 
-const response = await fetch("http://127.0.0.1:3002/api/hello", {
+const response = await fetch("http://127.0.0.1:5001/api/hello", {
   method: "GET",
 });
 
